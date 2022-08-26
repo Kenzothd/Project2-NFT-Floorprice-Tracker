@@ -1,12 +1,21 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import Home from "./pages/Home";
+import APIs from "./components/APIs";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Test</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Home />} />
+          <Route path="APIs" element={<APIs />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
